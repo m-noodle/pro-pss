@@ -21,6 +21,7 @@
         <module>pss-api</module>
         <module>pss-service</module>
         <module>pss-common</module>
+        <module>liu</module>
     </modules>
 
     <dependencyManagement>
