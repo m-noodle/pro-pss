@@ -1,7 +1,7 @@
 package com.tedu.mapper.generatorMapper;
 
-import entity.Inventory;
-import entity.InventoryExample;
+import com.tedu.common.Inventory;
+import com.tedu.common.InventoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

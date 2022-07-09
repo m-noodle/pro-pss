@@ -7,22 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="admin" />
         <module name="liu" />
         <module name="pss-api" />
         <module name="pss-common" />
+        <module name="pro-zzz" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="admin" target="1.8" />
-      <module name="MirLiu" target="1.8" />
+      <module name="pss-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="MirLiu" options="-parameters" />
-      <module name="admin" options="-parameters" />
       <module name="liu" options="-parameters" />
+      <module name="pro-zzz" options="-parameters" />
       <module name="pss-api" options="-parameters" />
       <module name="pss-common" options="-parameters" />
       <module name="pss-mapper" options="-parameters" />
