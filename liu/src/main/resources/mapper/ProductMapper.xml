@@ -12,7 +12,7 @@
         </if>
     </sql>
 
-
+    <!-- 新增商品信息 -->
     <insert id="addNew" useGeneratedKeys="true" keyProperty="proid">
         insert into product(
              pname, price, inprice, prodate,
@@ -24,6 +24,49 @@
                )
     </insert>
 
+    <!-- 根据id删除商品 -->
+    <delete id="deleteById">
+        delete from product where proid=#{proid}
+    </delete>
+
+    <!-- 动态修改商品信息 -->
+    <update id="updateById">
+        update
+            product
+        <set>
+            <if test="pname!=null">
+                pname = #{pname},
+            </if>
+            <if test="price!=null">
+                price = #{price},
+            </if>
+            <if test="inprice!=null">
+                inprice = #{inprice},
+            </if>
+            <if test="prodate!=null">
+                prodate = #{prodate},
+            </if>
+            <if test="reledate!=null">
+                reledate = #{reledate},
+            </if>
+            <if test="supname!=null">
+                supname = #{supname},
+            </if>
+            <if test="protype!=null">
+                protype = #{protype},
+            </if>
+            <if test="unit!=null">
+                unit = #{unit},
+            </if>
+            <if test="marks!=null">
+                marks = #{marks},
+            </if>
+        </set>
+        where
+            proid=#{proid}
+    </update>
+
+    <!-- 根据id查询商品 -->
     <select id="getById" resultType="cn.tedu.liu.pojo.vo.ProductDetailVO">
         select
             <include refid="DetailQueryField"/>
@@ -32,5 +75,59 @@
         where
               proid=#{proid}
     </select>
+
+    <!--查询对应供应商的商品名称-->
+    <select id="listPnameBySupname" resultType="string">
+        select
+            pname
+        from
+            product
+        where
+            supname like '%${supname}%'
+        order by proid
+    </select>
+
+    <!-- 根据类别查询商品 -->
+    <select id="getByProtype" resultType="cn.tedu.liu.pojo.vo.ProductDetailVO">
+        select
+        <include refid="DetailQueryField"/>
+        from
+        product
+        where
+        protype like '%${protype}%'
+        order by proid
+    </select>
+
+    <!-- 根据商品名称查询商品 -->
+    <select id="getByPname" resultType="cn.tedu.liu.pojo.vo.ProductDetailVO">
+        select
+        <include refid="DetailQueryField"/>
+        from
+        product
+        where
+        pname like '%${pname}%'
+        order by proid
+    </select>
+
+    <!-- 根据供货商查询商品 -->
+    <select id="getBySupname" resultType="cn.tedu.liu.pojo.vo.ProductDetailVO">
+        select
+        <include refid="DetailQueryField"/>
+        from
+        product
+        where
+        supname like '%${supname}%'
+        order by proid
+    </select>
+
+    <!-- 分页查询所有商品 -->
+    <select id="listAll" resultType="cn.tedu.liu.pojo.vo.ProductDetailVO">
+        select
+        <include refid="DetailQueryField"/>
+        from
+        product
+        order by proid
+    </select>
+
 
 </mapper>
