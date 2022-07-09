@@ -1,9 +1,11 @@
 package com.tedu.mapper.generatorMapper;
 
-import entity.Shop;
-import entity.ShopExample;
-import java.util.List;
+
+import com.tedu.common.Shop;
+import com.tedu.common.ShopExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface ShopMapper {
     /**

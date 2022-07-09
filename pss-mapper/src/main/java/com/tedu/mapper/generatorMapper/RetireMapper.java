@@ -1,9 +1,10 @@
 package com.tedu.mapper.generatorMapper;
 
-import entity.Retire;
-import entity.RetireExample;
-import java.util.List;
+import com.tedu.common.Retire;
+import com.tedu.common.RetireExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface RetireMapper {
     /**
