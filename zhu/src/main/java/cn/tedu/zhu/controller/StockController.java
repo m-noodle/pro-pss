@@ -27,7 +27,7 @@ public class StockController {
             @ApiImplicitParam(value = "订单id",name = "id",required= true,dataType = "int"),
             @ApiImplicitParam(value = "商品id",name = "proid",required= true,dataType = "int"),
             @ApiImplicitParam(value = "商品名称",name = "pname",required= true,dataType = "string"),
-            @ApiImplicitParam(value = "订单id",name = "id",required= true,dataType = "int"),
+            @ApiImplicitParam(value = "进货日期",name = "indate",required= true,dataType = "date"),
             @ApiImplicitParam(value = "页码",name = "page",required= true,dataType = "int"),
             @ApiImplicitParam(value = "每页条数",name = "pageSize",required= true,dataType = "int"),
     })

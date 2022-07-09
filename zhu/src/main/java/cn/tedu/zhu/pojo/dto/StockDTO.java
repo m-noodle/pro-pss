@@ -13,7 +13,7 @@ public class StockDTO implements Serializable {
     @ApiModelProperty(value = "订单id",example = "1")
     private Integer id;
     @ApiModelProperty(value = "商品id",example = "1")
-    private Integer proId;
+    private Integer proid;
     @ApiModelProperty(value = "商品名称",example = "苹果")
     private String pname;
     @ApiModelProperty(value = "进货日期",example = "2022-07-07")

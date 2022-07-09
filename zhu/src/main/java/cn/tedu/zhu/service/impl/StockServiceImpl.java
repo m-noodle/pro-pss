@@ -21,7 +21,7 @@ public class StockServiceImpl implements IStockService {
 
     @Override
     public JsonPage<StockVO> selectStockInfo(StockDTO stockDTO) {
-        if (stockDTO.getId()==null && stockDTO.getProId()==null
+        if (stockDTO.getId()==null && stockDTO.getProid()==null
                 && stockDTO.getPname()==null && stockDTO.getIndate()==null){
             log.info("输入的值为空时,查询全部");
             PageHelper.startPage(stockDTO.getPage(),stockDTO.getPageSize());
