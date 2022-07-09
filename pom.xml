@@ -11,9 +11,9 @@
 
     <groupId>com.tedu</groupId>
     <artifactId>pro-pss</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>pss-mapper</module>
@@ -23,6 +23,7 @@
         <module>pss-common</module>
         <module>liu</module>
         <module>pro-zzz</module>
+        <module>zhu</module>
     </modules>
 
     <dependencyManagement>

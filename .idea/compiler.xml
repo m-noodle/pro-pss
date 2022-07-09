@@ -10,10 +10,11 @@
         <module name="liu" />
         <module name="pss-api" />
         <module name="pss-common" />
-        <module name="pro-zzz" />
+        <module name="zhu" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="pro-zzz" target="1.8" />
       <module name="pss-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -25,6 +26,7 @@
       <module name="pss-common" options="-parameters" />
       <module name="pss-mapper" options="-parameters" />
       <module name="pss-service" options="-parameters" />
+      <module name="zhu" options="-parameters" />
     </option>
   </component>
 </project>
