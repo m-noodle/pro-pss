@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.min.mapper.ShopMapper">
+
+    
+   
+      <!--添加门店信息
+     int  addShop(Shop shop)-->
+     <insert id="addShop">
+         insert into shop(
+             id,
+             name,
+             address,
+             marks
+         )values (
+                     #{id},
+                     #{name},
+                     #{address},
+                     #{marks}
+
+                 )
+     </insert>
+    
+    
+    <!--门店详细信息
+    int  shopDetail(Long  id);-->
+    <select id="getShopDetail"  resultMap="shopDetailMap">
+        select
+
+            <include refid="shopDetailSql"/>
+
+        FROM shop sp
+        JOIN staff sf ON sp.id=sf.shop_id
+        WHERE
+        sp.id=#{id}
+        or
+        sf.staff_name like concat('%',#{staffName},'%')
+
+    </select>
+
+
+    <!-- 门店详情信息查询字段 -->
+    <sql id="shopDetailSql">
+        <if test="true">
+        sp.id,
+        sp.name,
+        sp.address,
+        sp.marks,
+        sf.staff_id,
+        sf.staff_name,
+        sf.staff_num,
+        sf.gender,
+        sf.tel,
+        sf.staff_type,
+        sf.pwd,
+        sf.shop_id
+        </if>
+    </sql>
+
+    <!--门店详情查询映射结果-->
+    <resultMap id="shopDetailMap" type="cn.tedu.min.common.entity.vo.ShopDetailVO">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="address" property="address" />
+        <result column="marks" property="marks" />
+        <result column="staff_id" property="staffId" />
+        <result column="staff_name" property="staffName" />
+        <result column="staff_num" property="staffNum" />
+        <result column="gender" property="gender" />
+        <result column="tel" property="tel" />
+        <result column="staff_type" property="staffType" />
+        <result column="pwd" property="pwd" />
+        <result column="shop_id" property="shopId" />
+    </resultMap>
+</mapper>

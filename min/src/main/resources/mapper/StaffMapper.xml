@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.min.mapper.StaffMapper">
+
+
+
+    <!--添加门店信息
+     int  addStaff(Shop shop)-->
+    <insert id="addStaff">
+        insert into staff(
+            staff_id,
+            staff_name,
+            staff_num,
+            gender,
+            tel,
+            staff_type,
+            pwd,
+            shop_id
+        )values (
+                    #{staffId},
+                    #{staffName},
+                    #{staffNum},
+                    #{gender},
+                    #{tel},
+                    #{staffType},
+                    #{pwd},
+                    #{shopId}
+
+                )
+    </insert>
+
+
+
+    <!-- 查询员工详细信息
+      int  getStaffDeil(AddStaffDTO staffDTO);-->
+    <select id="getStaffDeil"  resultMap="staffDetailMap">
+        select
+
+        <include refid="staffDetailSql"/>
+
+        FROM staff
+        WHERE
+        staff_num=#{staffNum}
+
+
+    </select>
+
+    <!-- 员工详情信息查询字段 -->
+    <sql id="staffDetailSql">
+        <if test="true">
+        staff_id,
+        staff_name,
+        staff_num,
+        gender,
+        tel,
+        staff_type,
+        pwd,
+        shop_id
+        </if>
+    </sql>
+    <!--员工详情查询映射结果-->
+    <resultMap id="staffDetailMap" type="cn.tedu.min.common.entity.vo.StaffDetailVO">
+        <result column="staff_id" property="staffId" />
+        <result column="staff_name" property="staffName" />
+        <result column="staff_num" property="staffNum" />
+        <result column="gender" property="gender" />
+        <result column="tel" property="tel" />
+        <result column="staff_type" property="staffType" />
+        <result column="pwd" property="pwd" />
+        <result column="shop_id" property="shopId" />
+    </resultMap>
+</mapper>
