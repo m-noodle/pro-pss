@@ -2,6 +2,7 @@ package cn.tedu.min.service.impl;
 
 import cn.tedu.min.common.entity.dto.AddShopDTO;
 import cn.tedu.min.common.entity.dto.ShopDTO;
+import cn.tedu.min.common.entity.dto.UpdateShopDateilDTO;
 import cn.tedu.min.common.entity.vo.ShopDetailVO;
 import cn.tedu.min.mapper.ShopMapper;
 import cn.tedu.min.mapper.StaffMapper;
@@ -25,8 +26,6 @@ public class ShopServiceImpl implements IShopService {
         log.info("判断门店名称是否存在同名");
         String  shopName= addShopDTO.getName();
 
-        shopMapper.getShopDetail();
-        staffMapper.getStaffDeil()
 
     }
 
@@ -35,5 +34,10 @@ public class ShopServiceImpl implements IShopService {
         ShopDetailVO shopDetailVO = shopMapper.getShopDetail(shopDTO);
 
         return shopDetailVO;
+    }
+
+    @Override
+    public void updateShopDetail(UpdateShopDateilDTO updateShopDateilDTO) {
+
     }
 }
