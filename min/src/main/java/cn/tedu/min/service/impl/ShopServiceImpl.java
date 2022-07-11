@@ -23,10 +23,7 @@ public class ShopServiceImpl implements IShopService {
     @Override
     public void addShop(AddShopDTO addShopDTO) {
         log.info("判断门店名称是否存在同名");
-        String  shopName= addShopDTO.getName();
 
-        shopMapper.getShopDetail();
-        staffMapper.getStaffDeil()
 
     }
 

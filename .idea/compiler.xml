@@ -15,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="admin" target="1.8" />
+      <module name="min" target="1.8" />
       <module name="MirLiu" target="1.8" />
     </bytecodeTargetLevel>
   </component>
