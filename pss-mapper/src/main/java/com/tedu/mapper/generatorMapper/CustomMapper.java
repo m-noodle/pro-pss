@@ -1,9 +1,11 @@
 package com.tedu.mapper.generatorMapper;
 
-import entity.Custom;
-import entity.CustomExample;
-import java.util.List;
+
+import com.tedu.common.Custom;
+import com.tedu.common.CustomExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface CustomMapper {
     /**

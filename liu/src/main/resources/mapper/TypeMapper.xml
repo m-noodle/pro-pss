@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 此文件必须使用mapper作为根级节点 -->
+<!-- namespace属性：必须的，用于指定此XML文件对应的接口，取值为接口的全限定名 -->
+<mapper namespace="cn.tedu.liu.mapper.TypeMapper">
+
+    <insert id="addNew">
+        insert into type values (null,#{typeName})
+    </insert>
+
+    <delete id="deleteById">
+        delete from type where pro_type=#{proType}
+    </delete>
+
+    <delete id="deleteByName">
+        delete from type where type_name=#{typeName}
+    </delete>
+
+    <update id="updateById">
+        update type set type_name=#{typeName} where pro_type=#{proType}
+    </update>
+
+    <select id="getById" resultType="cn.tedu.liu.pojo.vo.TypeVO">
+        select pro_type,type_name from type where pro_type=#{proType}
+    </select>
+
+    <select id="getLikeName" resultType="cn.tedu.liu.pojo.vo.TypeVO">
+        select pro_type,type_name from type where type_name like '%${typeName}%' order by pro_type
+    </select>
+
+    <select id="getByName" resultType="cn.tedu.liu.pojo.vo.TypeVO">
+        select pro_type,type_name from type where type_name=#{typeName} order by pro_type
+    </select>
+
+    <select id="listAll" resultType="cn.tedu.liu.pojo.vo.TypeVO">
+        select pro_type,type_name from type order by pro_type
+    </select>
+
+</mapper>

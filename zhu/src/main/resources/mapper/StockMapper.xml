@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.zhu.mapper.StockMapper">
+    <select id="getStockInfo" resultType="cn.tedu.zhu.pojo.vo.StockVO">
+        select
+            <include refid="BaseQueryFields"/>
+        from
+            stock
+        where
+            id=#{} or proid=#{proid} or pname like "%#{pname}%" or indate=#{indate}
+    </select>
+
+    <sql id="BaseQueryFields">
+        <if test="true">
+            id,
+            proid,
+            pname,
+            num,
+            indate
+        </if>
+    </sql>
+
+    <select id="getAllStockInfo" resultType="cn.tedu.zhu.pojo.vo.StockVO">
+        select
+            <include refid="BaseQueryFields"/>
+        from
+            stock
+    </select>
+
+</mapper>

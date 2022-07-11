@@ -1,7 +1,7 @@
 package com.tedu.mapper.generatorMapper;
 
-import entity.Product;
-import entity.ProductExample;
+import com.tedu.common.Product;
+import com.tedu.common.ProductExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

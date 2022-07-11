@@ -22,7 +22,6 @@
         <module>pss-service</module>
         <module>pss-common</module>
         <module>liu</module>
-        <module>min</module>
     </modules>
 
     <dependencyManagement>

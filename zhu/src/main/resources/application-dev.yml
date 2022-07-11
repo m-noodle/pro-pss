@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_pss?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    # 为null的属性不显示到响应结果中
+    default-property-inclusion: non_null
+
+logging:
+  level:
+    cn.tedu.pro.zzz: trace

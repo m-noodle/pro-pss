@@ -1,9 +1,11 @@
 package com.tedu.mapper.generatorMapper;
 
-import entity.Sale;
-import entity.SaleExample;
-import java.util.List;
+
+import com.tedu.common.Sale;
+import com.tedu.common.SaleExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface SaleMapper {
     /**

@@ -1,9 +1,11 @@
 package com.tedu.mapper.generatorMapper;
 
-import entity.Cusretire;
-import entity.CusretireExample;
-import java.util.List;
+
+import com.tedu.common.Cusretire;
+import com.tedu.common.CusretireExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface CusretireMapper {
     /**
