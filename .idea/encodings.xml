@@ -3,9 +3,13 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/liu/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/liu/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/min/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/min/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pss-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pss-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pss-mapper/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pss-mapper/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhu/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhu/src/main/resources" charset="UTF-8" />
   </component>
 </project>

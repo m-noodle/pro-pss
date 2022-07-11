@@ -1,5 +1,6 @@
 package cn.tedu.min.controller;
 
+import cn.tedu.min.common.entity.dto.AddShopDTO;
 import cn.tedu.min.common.entity.dto.ShopDTO;
 import cn.tedu.min.common.entity.vo.ShopDetailVO;
 import cn.tedu.min.service.impl.ShopServiceImpl;
@@ -26,5 +27,13 @@ public class ShopController {
     public JsonResult<ShopDetailVO> selectShopDetail(ShopDTO shopDTO){
         ShopDetailVO shopDetailVO = service.selectByIdShopDetail(shopDTO);
         return JsonResult.ok(shopDetailVO);
+    }
+
+
+    @PostMapping("/addshop")
+    @ApiOperation("添加门店")
+    public JsonResult addShopMessage(AddShopDTO addShopDTO){
+        service.addShop(addShopDTO);
+        return JsonResult.ok("添加成功");
     }
 }

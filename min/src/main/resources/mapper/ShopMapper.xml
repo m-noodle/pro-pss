@@ -3,32 +3,75 @@
 
 <mapper namespace="cn.tedu.min.mapper.ShopMapper">
 
-    
-   
-      <!--添加门店信息
-     int  addShop(Shop shop)-->
-     <insert id="addShop">
-         insert into shop(
-             id,
-             name,
-             address,
-             marks
-         )values (
-                     #{id},
-                     #{name},
-                     #{address},
-                     #{marks}
 
-                 )
-     </insert>
-    
-    
+
+    <!--添加门店信息
+   int  addShop(Shop shop)-->
+    <insert id="addShop">
+        insert into shop(
+            id,
+            name,
+            address,
+            marks
+        )values (
+                    #{id},
+                    #{name},
+                    #{address},
+                    #{marks}
+
+                )
+    </insert>
+
+
+    <!-- 修改店铺信息
+    int updateShopMessage(Stop stop);-->
+    <update id="updateShopMessage">
+        update
+            shop
+        set
+            id=#{id},
+            name=#{name},
+            address=#{address},
+            marks=#{marks}
+        where
+            id =#{id}
+    </update>
+
+    <!--   根据店铺名称查询门店的详细信息
+        ShopDetailVO shopIdgetShopDetail(Integer id);-->
+    <select id="shopNamegetShopDetail"  resultMap="shopMap">
+        select
+            id,
+            name ,
+            address,
+            marks
+        FROM shop
+
+        WHERE
+            name =#{name}
+    </select>
+
+
     <!--门店详细信息
     int  shopDetail(Long  id);-->
+    <select id="shopDetail"  resultMap="shopMap">
+        select
+            id,
+            name ,
+            address,
+            marks
+        FROM shop sp
+        where
+         id=#{id}
+    </select>
+
+
+<!--  根据id查询shop信息
+    Shop getByIdShop(Integer id);-->
     <select id="getShopDetail"  resultMap="shopDetailMap">
         select
 
-            <include refid="shopDetailSql"/>
+        <include refid="shopDetailSql"/>
 
         FROM shop sp
         JOIN staff sf ON sp.id=sf.shop_id
@@ -39,22 +82,21 @@
 
     </select>
 
-
     <!-- 门店详情信息查询字段 -->
     <sql id="shopDetailSql">
         <if test="true">
-        sp.id,
-        sp.name,
-        sp.address,
-        sp.marks,
-        sf.staff_id,
-        sf.staff_name,
-        sf.staff_num,
-        sf.gender,
-        sf.tel,
-        sf.staff_type,
-        sf.pwd,
-        sf.shop_id
+            sp.id,
+            sp.name,
+            sp.address,
+            sp.marks,
+            sf.staff_id,
+            sf.staff_name,
+            sf.staff_num,
+            sf.gender,
+            sf.tel,
+            sf.staff_type,
+            sf.pwd,
+            sf.shop_id
         </if>
     </sql>
 
@@ -73,4 +115,13 @@
         <result column="pwd" property="pwd" />
         <result column="shop_id" property="shopId" />
     </resultMap>
+
+    <!--门店详情查询映射结果-->
+    <resultMap id="shopMap" type="cn.tedu.min.common.entity.Shop">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="address" property="address" />
+        <result column="marks" property="marks" />
+    </resultMap>
+
 </mapper>

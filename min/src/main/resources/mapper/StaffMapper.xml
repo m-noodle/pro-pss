@@ -31,6 +31,16 @@
     </insert>
 
 
+    <!-- 修改负责人负责门店信息
+    int  updateStaffMessage(Staff staff);-->
+    <update id="updateStaffMessage">
+        update
+            staff
+            set
+                shop_id=#{shopId}
+                where
+            staff_num =#{staffNum}
+    </update>
 
     <!-- 查询员工详细信息
       int  getStaffDeil(AddStaffDTO staffDTO);-->
@@ -46,17 +56,32 @@
 
     </select>
 
+    <!--  据员工id查询员工详细信息
+    StaffDetailVO staffNumIdGetStaffDetail(Integer staffNum);-->
+    <select id="staffNumIdGetStaffDetail"  resultMap="staffDetailMap">
+        select
+
+        <include refid="staffDetailSql"/>
+
+        FROM staff
+        WHERE
+        staff_num=#{staffNum}
+
+
+    </select>
+
+
     <!-- 员工详情信息查询字段 -->
     <sql id="staffDetailSql">
         <if test="true">
-        staff_id,
-        staff_name,
-        staff_num,
-        gender,
-        tel,
-        staff_type,
-        pwd,
-        shop_id
+            staff_id,
+            staff_name,
+            staff_num,
+            gender,
+            tel,
+            staff_type,
+            pwd,
+            shop_id
         </if>
     </sql>
     <!--员工详情查询映射结果-->
