@@ -36,4 +36,9 @@ public class ShopController {
         service.addShop(addShopDTO);
         return JsonResult.ok("添加成功");
     }
+
+    @GetMapping("/login")
+    public  JsonResult  logIn(){
+        return JsonResult.ok("登陆成功");
+    }
 }
